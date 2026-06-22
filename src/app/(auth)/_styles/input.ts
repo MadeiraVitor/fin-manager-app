@@ -1,0 +1,1 @@
+export const inputClass = "w-full p-4 border rounded-xl border-zinc-700 outline-none placeholder:text-zinc-500"
