@@ -21,11 +21,7 @@ export default function SignInPage() {
         />
 
         <label className="block text-sm text-zinc-300 mb-2">Senha</label>
-        <input
-          type="password"
-          placeholder="••••••••"
-          className={inputClass}
-        />
+        <input type="password" placeholder="••••••••" className={inputClass} />
 
         <button
           type="submit"
