@@ -14,7 +14,7 @@ const inter = Inter({
 export const Sidebar = () => {
   return (
     <aside
-      className={`${inter.className} flex w-64 flex-col border-r border-[#1E293B] bg-[#0F111A] text-[#F1F5F9]`}
+      className={`${inter.className} flex w-64 flex-col border-r border-[#2f3c52] bg-[#182132] text-[#F1F5F9]`}
     >
       <div className="flex items-center gap-3 px-6 py-6">
         <div className="bg-[#10B981] rounded-xl py-4 px-2.5">
@@ -45,7 +45,7 @@ export const Sidebar = () => {
         </a>
       </nav>
 
-      <div className="border-t border-[#1E293B] px-6 py-6">
+      <div className="border-t border-[#2f3c52] px-6 py-6">
         <a
           href="#"
           className="flex items-center gap-3 rounded-xl px-4 py-3 text-[#94A3B8]"
