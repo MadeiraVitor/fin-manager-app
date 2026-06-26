@@ -1,4 +1,5 @@
 import { BalanceCard } from "./_components/balance-card";
+import { ChartCard } from "./_components/chart-card";
 import { FinancialMetricCard } from "./_components/financial-metric-card";
 import { Header } from "./_components/header";
 import { Sidebar } from "./_components/sidebar";
@@ -15,6 +16,15 @@ export default function Home() {
               <BalanceCard balance={1000} revenues={500} expenses={500} />
             </div>
               <FinancialMetricCard />
+          </section>
+
+          <section className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <ChartCard 
+              depositsTotal={1000} 
+              expensesTotal={500} 
+              investmentsTotal={500} 
+              balance={1000} 
+            />
           </section>
         </main>
       </div>
