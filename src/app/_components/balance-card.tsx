@@ -27,11 +27,11 @@ export const BalanceCard = ({
       aria-label="Resumo do saldo"
     >
       <div
-        className="pointer-events-none absolute rounded-full bg-white/20 w-[256px] h-[256px] top-[46px] right-[-80px]"
+        className="pointer-events-none absolute rounded-full bg-white/20 w-[256px] h-64 top-11.5 -right-20"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute rounded-full bg-white/10 w-[192px] h-[192px] left-[-48px] top-[-48px]"
+        className="pointer-events-none absolute rounded-full bg-white/10 w-48 h-48 -left-12 -top-12"
         aria-hidden
       />
 
@@ -50,7 +50,7 @@ export const BalanceCard = ({
             alt=""
             width={54}
             height={63}
-            className="h-[42px] w-9 object-contain"
+            className="h-10.5 w-9 object-contain"
           />
         </div>
       </div>
@@ -69,7 +69,7 @@ export const BalanceCard = ({
               alt=""
               width={14}
               height={20}
-              className="h-[14px] w-3.5 shrink-0 object-contain"
+              className="h-3.5 w-3.5 shrink-0 object-contain"
             />
             <span className="text-xs font-normal leading-[1.33] text-[#F3E8FF]">
               Receitas
@@ -87,7 +87,7 @@ export const BalanceCard = ({
               alt=""
               width={14}
               height={20}
-              className="h-[14px] w-3.5 shrink-0 object-contain"
+              className="h-3.5 w-3.5 shrink-0 object-contain"
             />
             <span className="text-xs font-normal leading-[1.33] text-[#F3E8FF]">
               Despesas
