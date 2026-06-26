@@ -1,3 +1,4 @@
+import { AiInsights } from "./_components/ai-insights";
 import { BalanceCard } from "./_components/balance-card";
 import { ChartCard } from "./_components/chart-card";
 import { FinancialMetricCard } from "./_components/financial-metric-card";
@@ -25,6 +26,8 @@ export default function Home() {
               investmentsTotal={500} 
               balance={1000} 
             />
+
+            <AiInsights />
           </section>
         </main>
       </div>
