@@ -4,6 +4,7 @@ import { ChartCard } from "./_components/chart-card";
 import { FinancialMetricCard } from "./_components/financial-metric-card";
 import { Header } from "./_components/header";
 import { Sidebar } from "./_components/sidebar";
+import { RecentTransactions } from "./_components/recent-transactions";
 
 export default function Home() {
   return (
@@ -28,6 +29,10 @@ export default function Home() {
             />
 
             <AiInsights />
+          </section>
+
+          <section>
+            <RecentTransactions />
           </section>
         </main>
       </div>
