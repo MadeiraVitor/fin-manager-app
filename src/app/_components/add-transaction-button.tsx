@@ -38,9 +38,12 @@ import {
   type CreateTransactionFormData,
 } from "../_schemas/transaction";
 import { addTransaction } from "../_actions/add-transaction";
+import { useRouter } from "next/navigation";
 
 export const AddTransactionButton = () => {
   const [open, setIsOpen] = useState<boolean>(false);
+
+  const router = useRouter();
 
   const {
     register,
@@ -67,6 +70,7 @@ export const AddTransactionButton = () => {
       await addTransaction(data);
       reset();
       setIsOpen(false);
+      router.refresh();
     } catch (err) {
       console.error(err);
     }
