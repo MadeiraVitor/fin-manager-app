@@ -67,8 +67,6 @@ export const BalanceCard = ({
             <Image
               src={iconReceitas}
               alt=""
-              width={14}
-              height={20}
               className="h-3.5 w-3.5 shrink-0 object-contain"
             />
             <span className="text-xs font-normal leading-[1.33] text-[#F3E8FF]">
@@ -85,8 +83,6 @@ export const BalanceCard = ({
             <Image
               src={iconDespesas}
               alt=""
-              width={14}
-              height={20}
               className="h-3.5 w-3.5 shrink-0 object-contain"
             />
             <span className="text-xs font-normal leading-[1.33] text-[#F3E8FF]">
