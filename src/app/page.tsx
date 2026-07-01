@@ -45,7 +45,15 @@ export default async function Home({ searchParams }: DashboardPageProps) {
               balance={data.balance}
             />
 
-            <AiInsights />
+            <AiInsights
+              month={selectedMonth}
+              year={dayjs().year()}
+              depositsTotal={data.depositsTotal}
+              expensesTotal={data.expensesTotal}
+              investmentsTotal={data.investmentsTotal}
+              balance={data.balance}
+              totalExpensePerCategory={data.totalExpensePerCategory}
+            />
           </section>
 
           <section>
