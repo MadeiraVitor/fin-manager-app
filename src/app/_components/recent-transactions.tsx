@@ -4,6 +4,9 @@ import { TransactionIcon } from "@/src/app/_components/transaction-icon";
 import Link from "next/link";
 import { AddTransactionButton } from "./add-transaction-button";
 import { getRecentTransactions } from "../_data/get-recent-transactions";
+import { TRANSACTION_CATEGORY_LABELS } from "../_constants/transaction";
+
+dayjs.locale("pt-br");
 
 export const RecentTransactions = async () => {
   const recentTransactions = await getRecentTransactions();
@@ -27,7 +30,7 @@ export const RecentTransactions = async () => {
               <p>{transaction.name}</p>
               <p className="text-sm text-muted-foreground">
                 {dayjs(transaction.date).format("DD [de] MMMM")} •{" "}
-                {transaction.category}
+                {TRANSACTION_CATEGORY_LABELS[transaction.category]}
               </p>
             </div>
 
