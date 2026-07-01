@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 
 import dashboardIcon from "@/src/assets/dashboard-icon.png";
 import transactionsIcon from "@/src/assets/transactions-icon.png";
-import logoutIcon from "@/src/assets/logout-icon.png";
 import logo from "@/src/assets/logo.png";
+import { Logout } from "./logout";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,15 +46,7 @@ export const Sidebar = () => {
       </nav>
 
       <div className="border-t border-[#2f3c52] px-6 py-6">
-        <a
-          href="#"
-          className="flex items-center gap-3 rounded-xl px-4 py-3 text-[#94A3B8]"
-        >
-          <Image src={logoutIcon} alt="logout" />
-          <span className="text-base font-medium leading-normal text-center">
-            Sair
-          </span>
-        </a>
+        <Logout />
       </div>
     </aside>
   );
