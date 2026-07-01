@@ -3,70 +3,10 @@ import "dayjs/locale/pt-br";
 import { TransactionIcon } from "@/src/app/_components/transaction-icon";
 import Link from "next/link";
 import { AddTransactionButton } from "./add-transaction-button";
+import { getRecentTransactions } from "../_data/get-recent-transactions";
 
-
-export interface Transaction {
-  id: string;
-  name: string;
-  amount: number | { toNumber?: () => number };
-  type: "DEPOSIT" | "EXPENSE" | "INVESTMENT";
-  category:
-    | "HOUSING"
-    | "TRANSPORTATION"
-    | "FOOD"
-    | "ENTERTAINMENT"
-    | "HEALTH"
-    | "UTILITY"
-    | "SALARY"
-    | "EDUCATION"
-    | "OTHER";
-  date: Date | string;
-}
-
-export const RecentTransactions = () => {
-
-  const recentTransactionsMock: Transaction[] = [
-    {
-      id: "1",
-      name: "Salário",
-      amount: 8500,
-      type: "DEPOSIT",
-      category: "SALARY",
-      date: new Date(2026, 2, 1),
-    },
-    {
-      id: "2",
-      name: "Aluguel",
-      amount: 2200,
-      type: "EXPENSE",
-      category: "HOUSING",
-      date: new Date(2026, 2, 3),
-    },
-    {
-      id: "3",
-      name: "Supermercado",
-      amount: 680.9,
-      type: "EXPENSE",
-      category: "FOOD",
-      date: new Date(2026, 2, 5),
-    },
-    {
-      id: "4",
-      name: "Freelance",
-      amount: 1500,
-      type: "DEPOSIT",
-      category: "OTHER",
-      date: new Date(2026, 2, 8),
-    },
-    {
-      id: "5",
-      name: "Academia",
-      amount: 129.9,
-      type: "EXPENSE",
-      category: "HEALTH",
-      date: new Date(2026, 2, 10),
-    },
-  ];
+export const RecentTransactions = async () => {
+  const recentTransactions = await getRecentTransactions();
 
   return (
     <div>
@@ -76,7 +16,7 @@ export const RecentTransactions = () => {
       </div>
 
       <div className="bg-[#161b26] rounded-3xl border border-[#1d293d] overflow-hidden">
-        {recentTransactionsMock.map((transaction, index) => (
+        {recentTransactions.map((transaction) => (
           <div
             key={transaction.id}
             className="p-5 flex gap-4 border-b last:border-none border-[#1d293d] hover:bg-slate-800/50 transition-colors"
@@ -99,7 +39,7 @@ export const RecentTransactions = () => {
               }
             >
               {transaction.type === "EXPENSE" ? "-" : "+"}
-              {transaction.amount.toLocaleString("pt-BR", {
+              {Number(transaction.amount).toLocaleString("pt-BR", {
                 style: "currency",
                 currency: "BRL",
               })}
@@ -107,11 +47,14 @@ export const RecentTransactions = () => {
           </div>
         ))}
         <div className="p-4 bg-slate-800/20 text-center">
-          <Link className="text-primary text-sm hover:underline" href='/transactions'>
+          <Link
+            className="text-primary text-sm hover:underline"
+            href="/transactions"
+          >
             Ver todo o histórico
           </Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
